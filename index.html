@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Grade Calculator</title>
+</head>
+<body>
+    <script>
+        function calculateGrade() {
+            // Input marks obtained in three subjects and total marks
+            var subject1Marks = parseInt(prompt("Enter marks obtained in subject 1:"));
+            var subject2Marks = parseInt(prompt("Enter marks obtained in subject 2:"));
+            var subject3Marks = parseInt(prompt("Enter marks obtained in subject 3:"));
+            var totalMarks = parseInt(prompt("Enter total marks:"));
+
+            // Calculate percentage
+            var totalObtainedMarks = subject1Marks + subject2Marks + subject3Marks;
+            var percentage = (totalObtainedMarks / totalMarks) * 100;
+
+            // Determine the grade and remarks
+            var grade, remarks;
+            if (percentage >= 90) {
+                grade = "A+";
+                remarks = "Excellent";
+            } else if (percentage >= 80) {
+                grade = "A";
+                remarks = "Very Good";
+            } else if (percentage >= 70) {
+                grade = "B";
+                remarks = "Good";
+            } else if (percentage >= 60) {
+                grade = "C";
+                remarks = "Fair";
+            } else if (percentage >= 50) {
+                grade = "D";
+                remarks = "Average";
+            } else {
+                grade = "F";
+                remarks = "Fail";
+            }
+
+            // Display the result on the web page
+            document.write("<h2>Result</h2>");
+            document.write("<p>Total Marks: " + totalMarks + "</p>");
+            document.write("<p>Marks Obtained: " + totalObtainedMarks + "</p>");
+            document.write("<p>Percentage: " + percentage.toFixed(2) + "%</p>");
+            document.write("<p>Grade: " + grade + "</p>");
+            document.write("<p>Remarks: " + remarks + "</p>");
+        }
+
+        // Call the function to calculate grade and display the result
+        calculateGrade();
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
